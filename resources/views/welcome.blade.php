@@ -553,7 +553,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{asset('js/jquery.validate.min.js')}}"></script>
     <script src="{{asset('js/mail-script.js')}}"></script>
 
-    <script src="{{asset('js/main.js')}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
 </body>
 
 </html>
