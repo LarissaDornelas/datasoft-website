@@ -1696,7 +1696,7 @@ h3 {
 /* line 4, ../../Arafath/CL/December/233. Startup/HTML/scss/_about.scss */
 .about_area::before {
     content: "";
-    background-image: url(../img/about/about.png);
+    background-image: url(../img/about/about.jpg);
     left: 0;
     top: 0;
     height: 100%;
