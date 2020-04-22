@@ -12,6 +12,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
+    <link rel="shortcut icon" href="{{asset('favicon.ico')}}"/>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
