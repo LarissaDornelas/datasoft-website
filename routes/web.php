@@ -25,8 +25,8 @@ Route::get('/downloads', function () {
 Route::get('/admin', function () {
     return view('admin/login');
 });
-Route::get('/admin/dashboard', function () {
-    return view('admin/dashboard');
+Route::get('/admin/inicio', function () {
+    return view('admin/home');
 });
 // Route::get('/admin', function () {
 //     return view('admin/loginAdmin');

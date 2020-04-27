@@ -2696,6 +2696,7 @@ i.material-icons {
 }
 .card .card-text {
     margin-bottom: 1.5625rem;
+    font-weight: normal !important;
 }
 .card a:hover {
     text-decoration: none;
@@ -2760,6 +2761,21 @@ i.material-icons {
 }
 .card-header-pills:hover {
     background: 0 0;
+}
+.card-edit-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.card-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #007bff;
+}
+.card-button:hover {
+    color: #c1c1c1;
 }
 .card-img-overlay {
     padding: 1.875rem 2.1875rem;
@@ -4513,6 +4529,13 @@ a.text-black:hover {
 .text-muted {
     color: #868e96 !important;
 }
+
+.status-update {
+    font-style: italic;
+    font-size: 13px;
+    font-weight: normal;
+}
+
 .with-shadows {
     box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
         0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
@@ -5255,11 +5278,36 @@ a.text-accent:hover {
 .main-sidebar__search input.form-control:hover {
     box-shadow: none;
 }
+.main-sidebar__nav-title {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 0.625rem;
+    letter-spacing: 0.125rem;
+    padding: 1px 1.5625rem;
+    font-weight: 500;
+    color: #9ea8b9;
+    border-bottom: 1px solid #e1e5eb;
+}
+.main-sidebar__nav-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+    color: #fff;
+    transition: color 250ms ease-in-out;
+    will-change: color;
+}
+.main-sidebar__nav-title {
+    color: #9ea8b9;
+}
 .main-content > .main-content-container.container-fluid {
     min-height: calc(100vh - 7.5rem);
 }
 .main-footer {
     height: 3.75rem;
+    position: fixed;
+    bottom: 0;
+    left: 250px;
+    right: 20px;
 }
 .main-footer .copyright {
     color: #818ea3;
