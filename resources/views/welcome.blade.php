@@ -78,9 +78,7 @@
                     <div class="col-lg-10 col-md-10">
                         <div class="slider_text">
                             <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">
-                                Com a Datasoft você tem 
-                                soluções práticas para o seu 
-                                negócio.
+                              {{$textHome}}
                             </h3>
                             <a class="boxed-btn3 wow fadeInLeft"  data-wow-duration="1s" data-wow-delay=".2s" href="portfolio.html">Saiba mais</a>
                         </div>

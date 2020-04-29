@@ -23,11 +23,10 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Ultima atualização</h5>
-                    <p class="card-text d-inline-block mb-3">Com a Datasoft você
-                        tem soluções práticas para o seu negócio.</p>
+                    <p class="card-text d-inline-block mb-3">{{$data->text}}</p>
                     <p class="text-muted status-update">alteração realizada por
-                        Carlos Duarte
-                        no dia 27 de janeiro</p>
+                    colocar usuário
+                        no dia {{ Carbon\Carbon::parse($data->updated_at)->format('d-m-Y') }}</p>
                 </div>
             </div>
         </div>
@@ -35,23 +34,43 @@
     </div>
 
     <div class="row" id="edit-area" style="display: none;">
-        <div class="col-sm-12">
-            <!-- Add New Post Form -->
-            <div class="card card-small mb-3">
-                <div class="card-body">
-                    <form class="add-new-post">
-                        <input class="form-control form-control-lg mb-3"
-                            type="text" placeholder="Your Post Title">
-                        <div id="editor-container" class="add-new-post__editor
-                            mb-1"></div>
-                    </form>
+        <div class="col-lg-12">
+            <div class="card card-small mb-4">
+                <div class="card-header border-bottom">
+                    <h6 class="m-0">Editar conteúdo</h6>
                 </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item p-3">
+                        <div class="row">
+                            <div class="col">
+                                <form method="POST" action="{{ route('editContent', ['page' => 'inicio']) }}">
+                                {{ csrf_field()}}
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <textarea class="form-control"
+                                                name="text" rows="5" >{{$data->text}}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-row justify-content-end">
+                                        <div class="col-xs-12 col-md-2">
+                                            <button onclick="changeContent()"
+                                                type="button" class="mb-2 btn
+                                                btn-outline-accent mr-2
+                                                btn-block">Cancelar</button>
+                                        </div>
+                                        <div class="col-xs-12 col-md-2">
+                                            <button type="submit" class="btn
+                                                btn-accent btn-block">Salvar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-
         </div>
-
     </div>
-</div>
 
 
-@endsection
+    @endsection

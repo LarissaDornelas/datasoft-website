@@ -14,7 +14,7 @@ class CreateDownloadsTable extends Migration
     public function up()
     {
         Schema::create('downloads', function (Blueprint $table) {
-            $table->string('id')->primary()->increments();
+            $table->integer('id')->autoIncrement();
             $table->string('title');
             $table->string('link');
             $table->longText('description');
