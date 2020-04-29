@@ -8,11 +8,11 @@
     <div class="page-header row no-gutters py-4">
         <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
             <span class="text-uppercase page-subtitle">Gerenciar conteúdo</span>
-            <h3 class="page-title">Início</h3>
+            <h3 class="page-title">Quem somos</h3>
         </div>
     </div>
 
-    <div class="row" id="card-area" style="display:block">
+    <div class="row" id="card-area" style="display:block" style="margin-bottom: 40px">
         <div class="col-sm-12">
             <div class="card card-small card-post card-post--aside
                 card-post--1">
@@ -22,11 +22,26 @@
                     </button>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Texto do banner</h5>
-                    <p class="card-text d-inline-block mb-3">{{$data[0]->text}}</p>
+                    <h5 class="card-title">Texto principal</h5>
+                    <p class="card-text d-inline-block mb-3">{{$data['text']->text}}</p>
                     <p class="text-muted status-update">alteração realizada por
-                        colocar usuário
-                        no dia {{ Carbon\Carbon::parse($data[0]->updated_at)->format('d-m-Y') }}</p>
+                        colocar usuário</p>
+                    <!-- no dia </p> -->
+                    <h5 class="card-title">Missão</h5>
+                    <p class="card-text d-inline-block mb-3">{{$data['mission']->text}}</p>
+                    <p class="text-muted status-update">alteração realizada por
+                        colocar usuário</p>
+                    <!-- no dia </p> -->
+                    <h5 class="card-title">Visão</h5>
+                    <p class="card-text d-inline-block mb-3">{{$data['vision']->text}}</p>
+                    <p class="text-muted status-update">alteração realizada por
+                        colocar usuário</p>
+                    <!-- no dia </p> -->
+                    <h5 class="card-title">Valores</h5>
+                    <p class="card-text d-inline-block mb-3">{{$data['values']->text}}</p>
+                    <p class="text-muted status-update">alteração realizada por
+                        colocar usuário</p>
+                    <!-- no dia </p> -->
                 </div>
             </div>
         </div>
@@ -47,7 +62,7 @@
                                     {{ csrf_field()}}
                                     <div class="form-row">
                                         <div class="form-group col-md-12">
-                                            <textarea class="form-control" name="text" rows="5">{{$data[0]->text}}</textarea>
+                                            <textarea class="form-control" name="text" rows="5"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-row justify-content-end">

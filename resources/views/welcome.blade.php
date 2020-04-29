@@ -12,7 +12,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="shortcut icon" href="{{asset('favicon.ico')}}"/>
+    <link rel="shortcut icon" href="{{asset('favicon.ico')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
@@ -49,16 +49,16 @@
                                         <li><a href="#services">Serviços</a></li>
                                         <li><a href="Portfolio.html">Portfólio</a></li>
                                         <li><a href="#contact">Fale conosco</a></li>
-                                       
+
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                         <div class="col-lg-2 d-none d-lg-block">
                             <div class="log_chat_area d-flex align-items-end">
-                                <a href="#" data-scroll-nav="0" class="say_hi"><img src="img/svg_icon/download-icon.svg" alt="" style="margin-right: 10px"/> Downloads</a>
+                                <a href="#" data-scroll-nav="0" class="say_hi"><img src="img/svg_icon/download-icon.svg" alt="" style="margin-right: 10px" /> Downloads</a>
                             </div>
-                            
+
                         </div>
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -78,9 +78,9 @@
                     <div class="col-lg-10 col-md-10">
                         <div class="slider_text">
                             <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">
-                              {{$textHome}}
+                                {{$homeData[0]->text}}
                             </h3>
-                            <a class="boxed-btn3 wow fadeInLeft"  data-wow-duration="1s" data-wow-delay=".2s" href="portfolio.html">Saiba mais</a>
+                            <a class="boxed-btn3 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s" href="portfolio.html">Saiba mais</a>
                         </div>
                     </div>
                 </div>
@@ -95,9 +95,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section_title text-center mb-70">
-                        <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s" >Quem somos</span>
-                        <h3 class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".2s">
-                        Com mais de 15 anos de experiência, nós podemos ajudar as empresas a crescer oferecendo softwares de qualidade</h3>
+                        <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">Quem somos</span>
+                        <h3 class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".2s">{{$aboutData['text']}}
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                             <img src="img/svg_icon/mission.svg" alt="">
                         </div>
                         <h3>Missão</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+                        <p>{{$aboutData['mission']}}</p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-4">
@@ -117,7 +117,7 @@
                             <img src="img/svg_icon/eyesight.svg" alt="">
                         </div>
                         <h3>Visão</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+                        <p>{{$aboutData['vision']}}</p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-4">
@@ -126,7 +126,7 @@
                             <img src="img/svg_icon/values.svg" alt="">
                         </div>
                         <h3>Valores</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+                        <p>{{$aboutData['values']}}</p>
                     </div>
                 </div>
             </div>
@@ -152,8 +152,8 @@
         </div>
     </div>
 
-    
-    <div data-scroll-index="0" class="get_in_tauch_area" id="contact"> 
+
+    <div data-scroll-index="0" class="get_in_tauch_area" id="contact">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -170,22 +170,22 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                                        <input type="text" placeholder="Seu nome" >
+                                        <input type="text" placeholder="Seu nome">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                                        <input type="email" placeholder="Email" >
+                                        <input type="email" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                                        <input type="email" placeholder="Assunto" >
+                                        <input type="email" placeholder="Assunto">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                       <textarea name="" id="" cols="30" placeholder="Message" rows="10"></textarea>
+                                        <textarea name="" id="" cols="30" placeholder="Message" rows="10"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -246,7 +246,9 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.3s">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+                            Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved
                         </p>
                     </div>
                 </div>

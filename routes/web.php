@@ -23,7 +23,6 @@ Route::get('/downloads', function () {
 Route::get('/admin', function () {
     return view('admin/login');
 });
+
 Route::get('/admin/{page}', 'ContentController@getContent')->name('showContent');
-Route::post('/admin/{page}/editar', 'ContentController@editContent')->name('editContent');
-
-
+Route::post('/admin/{page}/{name}/editar', 'ContentController@editContent')->name('editContent');
