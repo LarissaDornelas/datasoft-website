@@ -2763,6 +2763,7 @@ i.material-icons {
     background: 0 0;
 }
 .card-edit-button {
+    z-index: 5;
     position: absolute;
     right: 10px;
     top: 10px;
@@ -2773,6 +2774,10 @@ i.material-icons {
     background: none;
     cursor: pointer;
     color: #007bff;
+}
+
+.card-li-fix-height {
+    height: 125px;
 }
 .card-button:hover {
     color: #c1c1c1;

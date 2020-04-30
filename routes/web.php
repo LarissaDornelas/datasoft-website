@@ -25,4 +25,4 @@ Route::get('/admin', function () {
 });
 
 Route::get('/admin/{page}', 'ContentController@getContent')->name('showContent');
-Route::post('/admin/{page}/{name}/editar', 'ContentController@editContent')->name('editContent');
+Route::post('/admin/{page}/editar', 'ContentController@editContent')->name('editContent');

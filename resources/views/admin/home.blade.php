@@ -43,7 +43,7 @@
                     <li class="list-group-item p-3">
                         <div class="row">
                             <div class="col">
-                                <form method="POST" action="{{ route('editContent', ['page' => 'inicio', 'name' => 'banner']) }}">
+                                <form method="POST" action="{{ route('editContent', ['page' => 'inicio']) }}">
                                     {{ csrf_field()}}
                                     <div class="form-row">
                                         <div class="form-group col-md-12">
