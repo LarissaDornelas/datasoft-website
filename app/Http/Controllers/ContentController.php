@@ -19,6 +19,10 @@ class ContentController extends Controller
             switch ($page) {
                 case 'inicio':
                     return view('admin.home', ['data' => $contentData]);
+                case 'fale-conosco':
+                    return view('admin.contact', ['data' => $contentData]);
+                case 'servicos':
+                    return view('admin.services', ['data' => $contentData]);
                 case 'sobre':
                     $aboutData = [];
                     foreach ($contentData as $item) {
@@ -85,6 +89,21 @@ class ContentController extends Controller
                     }
 
                     return view('admin.about', ['data' => $aboutData]);
+
+                case 'fale-conosco':
+                    $data = $request->except(['_token']);
+                    DB::table('content')->where('page', '=', 'fale-conosco')->update($data);
+
+                    $contentData = DB::table('content')->where('page', '=', $page)->get();
+                    return view('admin.contact', ['data' => $contentData]);
+
+
+                case 'servicos':
+                    $data = $request->except(['_token']);
+                    DB::table('content')->where('page', '=', 'servicos')->update($data);
+
+                    $contentData = DB::table('content')->where('page', '=', $page)->get();
+                    return view('admin.services', ['data' => $contentData]);
             }
         } catch (Exception $e) {
             dd($e);

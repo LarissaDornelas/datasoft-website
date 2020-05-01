@@ -21,27 +21,19 @@
                     </button>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item p-3 card-li-fix-height">
+                    <li class="list-group-item p-4 card-li-fix-height">
                         <h5 class="card-title">Texto principal</h5>
                         <p class="card-text d-inline-block mb-3">{{$data['text']->text}}</p>
-                        <p class="text-muted status-update">alteração realizada por
-                            colocar usuário no dia {{ Carbon\Carbon::parse($data['text']->updated_at)->format('d-m-Y') }}
-
-
                     </li>
-                    <li class="list-group-item p-3 card-li-fix-height">
+                    <li class="list-group-item p-4 card-li-fix-height">
                         <h5 class="card-title">Missão</h5>
                         <p class="card-text d-inline-block mb-3">{{$data['mission']->text}}</p>
-                        <p class="text-muted status-update">alteração realizada por
-                            colocar usuário no dia {{ Carbon\Carbon::parse($data['mission']->updated_at)->format('d-m-Y') }}
                     </li>
-                    <li class="list-group-item p-3 card-li-fix-height">
+                    <li class="list-group-item p-4 card-li-fix-height">
                         <h5 class="card-title">Visão</h5>
                         <p class="card-text d-inline-block mb-3">{{$data['vision']->text}}</p>
-                        <p class="text-muted status-update">alteração realizada por
-                            colocar usuário no dia {{ Carbon\Carbon::parse($data['vision']->updated_at)->format('d-m-Y') }}
                     </li>
-                    <li class="list-group-item p-3 card-li-fix-height">
+                    <li class="list-group-item p-4 card-li-fix-height">
                         <h5 class="card-title">Valores</h5>
                         <p class="card-text d-inline-block mb-3">{{$data['values']->text}}</p>
                         <p class="text-muted status-update">alteração realizada por

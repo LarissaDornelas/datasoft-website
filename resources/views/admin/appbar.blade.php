@@ -98,15 +98,21 @@
                     <h6 class="main-sidebar__nav-title">Gerenciar conteúdo</h6>
                     <ul class="nav nav--no-borders flex-column">
                         <li class="nav-item">
-                            <a class='nav-link active' href="{{route('showContent', ['page'=> 'inicio'] )}}">
+                            <a class='nav-link {{Request::is('admin/inicio/*') || Request::is('admin/inicio') ? 'active': ''}}' href="{{route('showContent', ['page'=> 'inicio'] )}}">
                                 <i class="material-icons">home</i>
                                 <span>Início</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('showContent', ['page'=> 'sobre'] )}}">
+                            <a class='nav-link {{Request::is('admin/sobre/*') || Request::is('admin/sobre') ? 'active': ''}}' href="{{route('showContent', ['page'=> 'sobre'] )}}">
                                 <i class="material-icons">group</i>
                                 <span>Quem somos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class='nav-link {{Request::is('admin/servicos/*') || Request::is('admin/servicos') ? 'active': ''}}' href="{{route('showContent', ['page'=> 'servicos'] )}}">
+                                <i class="material-icons">work_outline</i>
+                                <span>Serviços</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -116,7 +122,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="form-components.html">
+                            <a class='nav-link {{Request::is('admin/fale-conosco/*') || Request::is('admin/fale-conosco') ? 'active': ''}}' href="{{route('showContent', ['page'=> 'fale-conosco'] )}}">
                                 <i class="material-icons">local_phone</i>
                                 <span>Fale conosco</span>
                             </a>
@@ -131,13 +137,13 @@
                     <h6 class="main-sidebar__nav-title">Gerenciar Dados</h6>
                     <ul class="nav nav--no-borders flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">
+                            <a class="nav-link " href="index.html">
                                 <i class="material-icons">people</i>
                                 <span>Clientes datasoft</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="components-blog-posts.html">
+                            <a class='nav-link {{Request::is('admin/usuarios/*') || Request::is('admin/usuarios') ? 'active': ''}}' href="{{route('showUsers')}}">
                                 <i class="material-icons">people</i>
                                 <span>Usuários do sistema</span>
                             </a>

@@ -13,6 +13,8 @@ class FirstPageController extends Controller
     {
         try {
             $home = DB::table('content')->where('page', '=', 'inicio')->get();
+            $contact = DB::table('content')->where('page', '=', 'fale-conosco')->get();
+            $services = DB::table('content')->where('page', '=', 'servicos')->get();
             $about = DB::table('content')->where('page', '=', 'sobre')->get()->toArray();
 
             $aboutData = [];
@@ -29,7 +31,7 @@ class FirstPageController extends Controller
                 }
             }
 
-            return view('welcome', ['homeData' => $home, 'aboutData' => $aboutData]);
+            return view('welcome', ['homeData' => $home, 'aboutData' => $aboutData, 'contactData' => $contact, 'servicesData' => $services]);
         } catch (Exception $e) {
             dd($e);
         }

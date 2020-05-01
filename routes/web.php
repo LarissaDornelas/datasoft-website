@@ -24,5 +24,9 @@ Route::get('/admin', function () {
     return view('admin/login');
 });
 
+Route::get('/admin/usuarios', 'UsersController@getUsers')->name('showUsers');
+Route::post('/admin/usuarios', 'UsersController@createUser')->name('createUser');
+
+
 Route::get('/admin/{page}', 'ContentController@getContent')->name('showContent');
 Route::post('/admin/{page}/editar', 'ContentController@editContent')->name('editContent');

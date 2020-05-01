@@ -141,9 +141,7 @@
                     <div class="about_info">
                         <div class="section_title white_text">
                             <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Serviços</span>
-                            <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Empowering individuals </h3>
-                            <p class="mid_text wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Efficiently unleash cross-media tour function information without cross action media value. Quickly maximize timely deliverables for real-time schemas.</p>
-                            <p class="last_text wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">“Function information without cross action media value.</p>
+                            <p class="mid_text wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">{{$servicesData[0]->text}}</p>
                             <a href="#" class="boxed-btn3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">Ver portfólio</a>
                         </div>
                     </div>
@@ -159,7 +157,7 @@
                 <div class="col-lg-8">
                     <div class="section_title text-center mb-90">
                         <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Fale conosco</h3>
-                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Envie sua mensagem preenchendo o formulário com sua dúvida, sugestão ou solicitação de informações. Se preferir, ligue em um dos telefones indicados no rodapé.</p>
+                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">{{$contactData[0]->text}}</p>
                     </div>
                 </div>
             </div>
