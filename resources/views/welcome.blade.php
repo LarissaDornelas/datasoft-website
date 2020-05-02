@@ -215,12 +215,12 @@
                     <div class="col-xl-7 col-lg-7 col-md-9">
                         <div class="menu_links">
                             <ul>
-                                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s" href="#">About</a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s"></li>
-                                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".4s" href="#">Services</a></li>
-                                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".6s" href="#">Portfolio</a></li>
-                                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay=".8s" href="#">Pages</a></li>
-                                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s" href="#">Blog</a></li>
-                                <li><a class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1.1s" href="#">Contact</a></li>
+                                <li><a class="wow fadeInDown" href="#aboutUs">Quem somos</a></li>
+                                <li><a class="wow fadeInDown" href="#services">Serviços</a></li>
+                                <li><a class="wow fadeInDown" href="Portfolio.html">Portfólio</a></li>
+                                <li><a class="wow fadeInDown" href="#contact">Fale conosco</a></li>
+
+
                             </ul>
                         </div>
                     </div>
@@ -228,10 +228,15 @@
                         <div class="socail_links">
                             <ul>
                                 <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" href="#"> <i class="fa fa-facebook"></i> </a></li>
-                                <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s" href="#"> <i class="fa fa-twitter"></i> </a></li>
-                                <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s" href="#"> <i class="fa fa-instagram"></i> </a></li>
-                                <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s" href="#"> <i class="fa fa-google-plus"></i> </a></li>
+
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12" style="margin:30px 0 -60px 0">
+                        <div class="Description">
+                            <p>Rua Gomes Batista, 11 - sala 304 - Nossa Sra. da Conceicao - João Monlevade - MG 35930-033.<br />
+                                Fones: (31) 3851-1585 - (31) 3850-1956</p>
                         </div>
                     </div>
                 </div>

@@ -22,11 +22,19 @@ Route::get('/downloads', function () {
 });
 Route::get('/admin', function () {
     return view('admin/login');
-});
+})->name('login');
 
-Route::get('/admin/usuarios', 'UsersController@getUsers')->name('showUsers');
-Route::post('/admin/usuarios', 'UsersController@createUser')->name('createUser');
+Route::post('login', 'Auth\LoginController@login')->name('postLogin');
+Route::get('/logout', function () {
+    Session::flush();
+    Auth::logout();
+    return redirect(\URL::previous());
+})->name('logout');
 
 
-Route::get('/admin/{page}', 'ContentController@getContent')->name('showContent');
-Route::post('/admin/{page}/editar', 'ContentController@editContent')->name('editContent');
+
+Route::get('/admin/usuarios', 'UsersController@getUsers')->middleware('auth')->name('showUsers');
+Route::post('/admin/usuarios', 'UsersController@createUser')->middleware('auth')->name('createUser');
+
+Route::get('/admin/{page}', 'ContentController@getContent')->middleware('auth')->name('showContent');
+Route::post('/admin/{page}/editar', 'ContentController@editContent')->middleware('auth')->name('editContent');

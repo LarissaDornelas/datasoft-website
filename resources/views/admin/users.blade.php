@@ -27,7 +27,7 @@
         </button>
     </div>
     @endif
-    <div class="row">
+    <div class="row ">
         <div class="col">
             <div class="card card-small mb-4">
                 <div class="card-header border-bottom">
@@ -35,26 +35,23 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-user"><i class="material-icons">add</i> Novo Usuário</button>
                 </div>
 
-                <div class="card-body p-0 pb-3 text-center">
-                    <table class="table mb-0">
+                <div class="card-body p-0 pb-3 text-left">
+                    <table class="table mb-0 table-bordered">
                         <thead class="bg-light">
                             <tr>
-                                <th scope="col" class="border-0">#</th>
+
                                 <th scope="col" class="border-0">Nome</th>
                                 <th scope="col" class="border-0">Email</th>
-                                <th scope="col" class="border-0"></th>
+
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($userData as $item)
                             <tr>
-                                <td>{{$item->id}}</td>
+
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->email}}</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar"><i class="material-icons">create</i></button>
-                                    <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Excluir"><i class="material-icons">delete</i></button>
-                                </td>
+
                             </tr>
                             @endforeach
 

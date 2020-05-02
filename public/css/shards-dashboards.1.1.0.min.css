@@ -217,6 +217,7 @@ pre {
 .table th {
     padding: 0.75rem;
     vertical-align: middle;
+    /* text-align: left; */
 }
 .table .table {
     background-color: #fff;
