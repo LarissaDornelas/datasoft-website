@@ -12,49 +12,92 @@
         </div>
     </div>
 
-    <div class="row" id="edit-area" style="display: none;">
-        <div class="col-lg-12">
+    <div class="row" id="card-area" style="display:block">
+        <div class="col-sm-12">
             <div class="card card-small mb-4">
-                <div class="card-header border-bottom">
-                    <h6 class="m-0">Editar dados</h6>
-                </div>
+                <!-- <div class="card-edit-button">
+                    <button class="card-button" onclick="changeContent()">
+                        <i class="material-icons">edit</i>
+                    </button>
+                </div> -->
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item p-3">
+
+                    <li class="list-group-item p-4">
+                        <h6 class="card-title">Alterar nome</h6>
                         <div class="row">
                             <div class="col">
-                                <form method="POST" action="">
+                                <form method="POST" action="{{Route('changeName')}}">
                                     {{ csrf_field()}}
                                     <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label for="exampleInputEmail1">Nome</label>
-                                            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="exampleInputEmail1">Nome</label>
-                                            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="form-row justify-content-end">
-                                        <div class="col-xs-12 col-md-2">
-                                            <button onclick="changeContent()" type="button" class="mb-2 btn
-                                                btn-outline-accent mr-2
-                                                btn-block">Cancelar</button>
+                                        <div class="form-group col-md-4">
+                                            <input type="text" name="name" class="form-control" placeholder="Novo nome">
                                         </div>
                                         <div class="col-xs-12 col-md-2">
                                             <button type="submit" class="btn
                                                 btn-accent btn-block">Salvar</button>
                                         </div>
                                     </div>
+
                                 </form>
                             </div>
                         </div>
                     </li>
+
+                    <li class="list-group-item p-4">
+                        <h6 class="card-title">Alterar senha</h6>
+                        <div class="row">
+                            <div class="col">
+                                <form method="POST" action="{{Route('changePassword')}}">
+                                    {{ csrf_field()}}
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4 @if(session('errorPassword')) has-error @endif">
+                                            <input type="password" name="passwordNow" class="form-control" placeholder="Senha atual">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <input type="password" name="password" class="form-control" placeholder="Nova senha">
+                                        </div>
+                                        @if(session('errorPassword'))
+                                        <div style="display:block" id="login-alert" class="alert alert-danger col-sm-12">Senha atual incorreta</div>
+                                        @endif
+                                        <div class="col-xs-12 col-md-2">
+                                            <button type="submit" class="btn
+                                                btn-accent btn-block">Salvar</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item p-4">
+                        <div class="row  justify-content-center">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#deleteModal">Excluir conta</button>
+                            </div>
+                    </li>
                 </ul>
+            </div>
+
+        </div>
+        <div class="modal fade darken-background" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModal">Excluir conta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Tem certeza que deseja realizar esta operação?
+                        <p style="font-weight: normal">Após confirmado sua sessão será encerrada e você não poderá desfazer a ação.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" onclick="location.href = '{{Route('deleteAccount')}}';">Confirmar</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-</div>
-
-
-@endsection
+    @endsection

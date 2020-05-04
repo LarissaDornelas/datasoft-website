@@ -168,7 +168,7 @@
                                 </a>
                                 <div class="dropdown-menu
                                         dropdown-menu-small">
-                                    <a class="dropdown-item" href="user-profile-lite.html">
+                                    <a class="dropdown-item" href="{{Route('showProfile')}}">
                                         <i class="material-icons">&#xE7FD;</i>
                                         Editar perfil</a>
 
