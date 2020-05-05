@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
 use Exception;
 
@@ -57,8 +56,6 @@ class UsersController extends Controller
 
     function changePassword(Request $request)
     {
-
-
         try {
             $user = User::where('email', Auth::User()->email)
                 ->first();
@@ -69,20 +66,35 @@ class UsersController extends Controller
                 User::where('email', Auth::User()->email)->first()->update(array('password' => $hashedRandomPassword));
 
 
-                return redirect('/admin/editar-perfil')->with('success', 'Senha atualizada com sucesso');
+                return redirect('/admin/editar-perfil')->with('successPassword', 'Senha atualizada com sucesso');
             } else {
                 return redirect('/admin/editar-perfil')->with('errorPassword', 'Senha atual incorreta');
             }
         } catch (Exception $err) {
+            return redirect('/admin/editar-perfil')->with('errorPassword', 'Ocorreu um erro ao atualizar senha');
         }
     }
     function changeName(Request $request)
     {
-        dd($request);
+        try {
+
+            User::where('email', Auth::User()->email)->first()->update(array('name' => $request['name']));
+
+            return redirect('/admin/editar-perfil')->with('successName', 'Nome atualizado com sucesso');
+        } catch (Exception $err) {
+            return redirect('/admin/editar-perfil')->with('errorName', 'Ocorreu um erro ao atualizar nome');
+        }
     }
+
 
     function deleteAccount()
     {
-        return view('admin.profile');
+        try {
+            User::where('email', Auth::User()->email)->first()->delete();
+
+            return redirect('/logout');
+        } catch (Exception $err) {
+            return redirect('/admin/editar-perfil')->with('errorDelete', 'Ocorreu um erro ao excluir conta');
+        }
     }
 }

@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'FirstPageController@getContent')->name('getFirstPageData');
+
 Route::get('/portfolio', function () {
-    return view('welcome');
-});
+    return view('portfolio');
+})->name('portfolio');
+
 Route::get('/downloads', function () {
-    return view('welcome');
-});
+    return view('downloads');
+})->name('downloads');
 Route::get('/admin', function () {
     return view('admin/login');
 })->name('login');
@@ -38,7 +40,7 @@ Route::post('/admin/usuarios', 'UsersController@createUser')->middleware('auth')
 Route::get('/admin/editar-perfil', 'UsersController@getProfile')->middleware('auth')->name('showProfile');
 Route::post('/admin/alterar-nome', 'UsersController@changeName')->middleware('auth')->name('changeName');
 Route::post('/admin/alterar-senha', 'UsersController@changePassword')->middleware('auth')->name('changePassword');
-Route::delete('/admin/excluir-conta', 'UsersController@deleteAccount')->middleware('auth')->name('deleteAccount');
+Route::get('/admin/excluir-conta', 'UsersController@deleteAccount')->middleware('auth')->name('deleteAccount');
 
 Route::get('/admin/{page}', 'ContentController@getContent')->middleware('auth')->name('showContent');
 Route::post('/admin/{page}/editar', 'ContentController@editContent')->middleware('auth')->name('editContent');

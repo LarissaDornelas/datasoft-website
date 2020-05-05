@@ -7,7 +7,6 @@
     <title>Datasoft</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <!-- Place favicon.ico in the root directory -->
 
@@ -26,9 +25,15 @@
     <link rel="stylesheet" href="{{asset('css/slicknav.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
 <body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- header-start -->
     <header>
         <div class="header-area">
             <div id="sticky-header" class="main-header-area">
@@ -36,7 +41,7 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
-                                <a href="#">
+                                <a href="/">
                                     <img src="img/logo.svg" alt="" style="max-height: 55px">
                                 </a>
                             </div>
@@ -45,10 +50,10 @@
                             <div class="main-menu  d-none d-lg-block text-center">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="#aboutUs">Quem somos</a></li>
-                                        <li><a href="#services">Serviços</a></li>
+                                        <li><a class="active" href="/#aboutUs">Quem somos</a></li>
+                                        <li><a href="/#services">Serviços</a></li>
                                         <li><a href="{{route('portfolio')}}">Portfólio</a></li>
-                                        <li><a href="#contact">Fale conosco</a></li>
+                                        <li><a href="/#contact">Fale conosco</a></li>
 
                                     </ul>
                                 </nav>
@@ -56,7 +61,7 @@
                         </div>
                         <div class="col-lg-2 d-none d-lg-block">
                             <div class="log_chat_area d-flex align-items-end">
-                                <a href="{{route('downloads')}}" data-scroll-nav=" 0" class="say_hi"><img src="img/svg_icon/download-icon.svg" alt="" style="margin-right: 10px" /> Downloads</a>
+                                <a href="{{route('downloads')}}" data-scroll-nav="0" class="say_hi"><img src="img/svg_icon/download-icon.svg" alt="" style="margin-right: 10px" /> Downloads</a>
                             </div>
 
                         </div>
@@ -70,137 +75,72 @@
     </header>
     <!-- header-end -->
 
-    <!-- slider_area_start -->
-    <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
-            <div class="container">
-                <div class="row align-items-center justify-content-start">
-                    <div class="col-lg-10 col-md-10">
-                        <div class="slider_text">
-                            <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">
-                                {{$homeData[0]->text}}
-                            </h3>
-                            <a class="boxed-btn3 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s" href="portfolio.html">Saiba mais</a>
-                        </div>
+    <!-- bradcam_area  -->
+    <div class="bradcam_area breadcam_bg_2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Portfólio</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- slider_area_end -->
+    <!-- /bradcam_area  -->
 
-    <!-- service_area  -->
-    <div id="aboutUs" class="service_area">
+    <!-- portfolio_image_area  -->
+    <div class="portfolio_image_area">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section_title text-center mb-70">
-                        <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">Quem somos</span>
-                        <h3 class="wow fadeInUp" data-wow-duration="1.2s" data-wow-delay=".2s">{{$aboutData['text']}}
-                        </h3>
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb-90">
+                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Nossos produtos</h3>
+                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Tour function information without cross action media value quickly maximize timely deliverables.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_service text-center wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay=".4s">
-                        <div class="icon">
-                            <img src="img/svg_icon/mission.svg" alt="">
-                        </div>
-                        <h3>Missão</h3>
-                        <p>{{$aboutData['mission']}}</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_service text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                        <div class="icon">
-                            <img src="img/svg_icon/eyesight.svg" alt="">
-                        </div>
-                        <h3>Visão</h3>
-                        <p>{{$aboutData['vision']}}</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <div class="single_service text-center wow fadeInRight" data-wow-duration="1.2s" data-wow-delay=".4s">
-                        <div class="icon">
-                            <img src="img/svg_icon/values.svg" alt="">
-                        </div>
-                        <h3>Valores</h3>
-                        <p>{{$aboutData['values']}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--/ service_area  -->
 
-    <div id="services" class="about_area">
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-lg-5 offset-lg-1">
-                    <div class="about_info">
-                        <div class="section_title white_text">
-                            <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Serviços</span>
-                            <p class="mid_text wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">{{$servicesData[0]->text}}</p>
-                            <a href="#" class="boxed-btn3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">Ver portfólio</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div data-scroll-index="0" class="get_in_tauch_area" id="contact">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section_title text-center mb-90">
-                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Fale conosco</h3>
-                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">{{$contactData[0]->text}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="touch_form">
-                        <form action="#">
+                <div class="whole-wrap">
+                    <div class="container box_1170">
+                        <div class="section-top-border">
+                            <h3 class="mb-30">Sig gerencial</h3>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                                        <input type="text" placeholder="Seu nome">
-                                    </div>
+                                <div class="col-md-3">
+                                    <img src="img/banner/banner.png" alt="" class="img-fluid">
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                                        <input type="email" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                                        <input type="email" placeholder="Assunto">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                        <textarea name="" id="" cols="30" placeholder="Message" rows="10"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="submit_btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">
-                                        <button class="boxed-btn3" type="submit">Enviar Mensagem</button>
-                                    </div>
+                                <div class="col-md-9 mt-sm-20">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, ipsum eu mattis viverra, sem magna imperdiet libero, eget pulvinar sapien sem at nulla. Aenean eget ex vitae dui viverra commodo. Sed fermentum quam nec sapien rutrum ornare. Phasellus consectetur purus purus, sit amet semper diam placerat eget.</p>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+
+                    </div>
+                    <div class="container box_1170">
+                        <div class="section-top-border">
+                            <h3 class="mb-30">Sig gerencial</h3>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="img/banner/banner.png" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-md-9 mt-sm-20">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, ipsum eu mattis viverra, sem magna imperdiet libero, eget pulvinar sapien sem at nulla. Aenean eget ex vitae dui viverra commodo. Sed fermentum quam nec sapien rutrum ornare. Phasellus consectetur purus purus, sit amet semper diam placerat eget.</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+        <!--/ portfolio_image_area  -->
+
     </div>
 
 
-    <!-- footer start -->
+
+
     <footer class="footer">
         <div class="footer_top">
             <div class="container">
@@ -215,10 +155,10 @@
                     <div class="col-xl-7 col-lg-7 col-md-9">
                         <div class="menu_links">
                             <ul>
-                                <li><a class="wow fadeInDown" href="#aboutUs">Quem somos</a></li>
-                                <li><a class="wow fadeInDown" href="#services">Serviços</a></li>
-                                <li><a class="wow fadeInDown" href="Portfolio.html">Portfólio</a></li>
-                                <li><a class="wow fadeInDown" href="#contact">Fale conosco</a></li>
+                                <li><a class="wow fadeInDown" href="/#aboutUs">Quem somos</a></li>
+                                <li><a class="wow fadeInDown" href="/#services">Serviços</a></li>
+                                <li><a class="wow fadeInDown" href="{{route('portfolio')}}">Portfólio</a></li>
+                                <li><a class="wow fadeInDown" href="/#contact">Fale conosco</a></li>
 
 
                             </ul>

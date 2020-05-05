@@ -163,7 +163,7 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle
-                                        text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="height: 100%; display: flex; align-items: center;">
+                                        text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="height: 100%; display: flex; align-items: center; margin-left: 80px">
                                     <span class="d-none d-md-inline-block">{{Auth::User()->name}}</span>
                                 </a>
                                 <div class="dropdown-menu

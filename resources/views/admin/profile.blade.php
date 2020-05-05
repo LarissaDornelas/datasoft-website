@@ -32,10 +32,21 @@
                                         <div class="form-group col-md-4">
                                             <input type="text" name="name" class="form-control" placeholder="Novo nome">
                                         </div>
+
                                         <div class="col-xs-12 col-md-2">
                                             <button type="submit" class="btn
                                                 btn-accent btn-block">Salvar</button>
                                         </div>
+                                        @if(session('successName'))
+                                        <div style="display:block" id="login-alert" class="alert alert-success alert-dismissible col-sm-12" role="alert">{{session('successName')}} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button></div>
+                                        @endif
+                                        @if(session('errorName'))
+                                        <div style="display:block" id="login-alert" class="alert alert-danger alert-dismissible col-sm-12" role="alert">{{session('errorName')}} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button></div>
+                                        @endif
                                     </div>
 
                                 </form>
@@ -56,13 +67,21 @@
                                         <div class="form-group col-md-4">
                                             <input type="password" name="password" class="form-control" placeholder="Nova senha">
                                         </div>
-                                        @if(session('errorPassword'))
-                                        <div style="display:block" id="login-alert" class="alert alert-danger col-sm-12">Senha atual incorreta</div>
-                                        @endif
+
                                         <div class="col-xs-12 col-md-2">
                                             <button type="submit" class="btn
                                                 btn-accent btn-block">Salvar</button>
                                         </div>
+                                        @if(session('successPassword'))
+                                        <div style="display:block" id="login-alert" class="alert alert-success alert-dismissible col-sm-12" role="alert">{{session('successPassword')}} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button></div>
+                                        @endif
+                                        @if(session('errorPassword'))
+                                        <div style="display:block" id="login-alert" class="alert alert-danger alert-dismissible col-sm-12" role="alert">{{session('errorPassword')}} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button></div>
+                                        @endif
                                     </div>
 
                                 </form>
@@ -74,6 +93,11 @@
                             <div class="col-12">
                                 <button type="button" class="btn btn-outline-danger btn-block" data-toggle="modal" data-target="#deleteModal">Excluir conta</button>
                             </div>
+                            @if(session('errorDelete'))
+                            <div style="display:block" id="login-alert" class="alert alert-danger alert-dismissible col-sm-12" role="alert">{{session('errorDelete')}} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button></div>
+                            @endif
                     </li>
                 </ul>
             </div>
@@ -95,6 +119,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         <button type="button" class="btn btn-primary" onclick="location.href = '{{Route('deleteAccount')}}';">Confirmar</button>
+
                     </div>
                 </div>
             </div>

@@ -2167,13 +2167,13 @@ h3 {
 }
 
 /* line 1, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
-.bradcam_bg_1 {
-    background-image: url(../img/banner/bradcam.png);
+.breadcam_bg_1 {
+    background-image: url(../img/banner/bg-downloads.jpg);
 }
 
 /* line 4, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
 .breadcam_bg_2 {
-    background-image: url(../img/banner/bradcam_2.png);
+    background-image: url(../img/banner/bg.jpg);
 }
 
 /* line 7, ../../Arafath/CL/December/233. Startup/HTML/scss/_bradcam.scss */
@@ -4411,7 +4411,6 @@ h6 {
 /* line 371, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
 .progress-table .percentage {
     width: 40.36%;
-    padding-right: 50px;
 }
 
 /* line 375, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
