@@ -45,9 +45,9 @@
                             <div class="main-menu  d-none d-lg-block text-center">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="#aboutUs">Quem somos</a></li>
+                                        <li><a href="#aboutUs">Quem somos</a></li>
                                         <li><a href="#services">Serviços</a></li>
-                                        <li><a href="{{route('portfolio')}}">Portfólio</a></li>
+                                        <li><a href="" onClick="location.href='/portfolio'">Portfólio</a></li>
                                         <li><a href="#contact">Fale conosco</a></li>
 
                                     </ul>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="col-lg-2 d-none d-lg-block">
                             <div class="log_chat_area d-flex align-items-end">
-                                <a href="{{route('downloads')}}" data-scroll-nav=" 0" class="say_hi"><img src="img/svg_icon/download-icon.svg" alt="" style="margin-right: 10px" /> Downloads</a>
+                                <a href="" onClick="location.href='/downloads'" data-scroll-nav=" 0" class="say_hi"><img src="img/svg_icon/download-icon.svg" alt="" style="margin-right: 10px" /> Downloads</a>
                             </div>
 
                         </div>

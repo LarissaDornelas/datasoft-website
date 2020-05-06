@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Content extends Model
+class Download extends Model
 {
-    protected $table = "content";
+    protected $table = "downloads";
 
     public $timestamps = true;
 
     protected $fillable = [
-        'id', 'name', 'text'
+        'id', 'title', 'description', 'link'
     ];
 }

@@ -96,14 +96,14 @@
                 <div class="col-lg-6">
                     <div class="section_title text-center mb-90">
                         <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Downloads para clientes</h3>
-                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Tour function information without cross action media value quickly maximize timely deliverables.</p>
+                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Todas as atualizações estão disponiveis</p>
                     </div>
                 </div>
             </div>
 
 
             <div class="section-top-border">
-                <h3 class="mb-30">Links</h3>
+                <h3 class="mb-30">Links disponíveis para download</h3>
                 <div class="progress-table-wrap">
                     <div class="progress-table">
                         <div class="table-head">

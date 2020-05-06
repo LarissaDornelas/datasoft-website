@@ -75,7 +75,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="{{route('getDownloads')}}">
                                 <i class="material-icons">cloud_download</i>
                                 <span>Downloads</span>
                             </a>
@@ -211,6 +211,7 @@
     <script src="{{asset('js/app-blog-overview.1.1.0.js')}}"></script>
     <script src="{{asset('js/admin-area.js')}}"></script>
     <script src="{{asset('js/app-blog-new-post.1.1.0.min.js')}}"></script>
+    <script src="{{asset('js/edit-downloads.js')}}"></script>
 </body>
 
 </html>
