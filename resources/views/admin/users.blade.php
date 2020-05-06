@@ -35,11 +35,11 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#new-user"><i class="material-icons">add</i> Novo Usuário</button>
                 </div>
 
-                <div class="card-body p-0 pb-3 text-left">
-                    <table class="table mb-0 table-bordered">
+                <div class="card-body p-0 pb-3 text-center">
+                    <table class="table mb-0 table-striped">
                         <thead class="bg-light">
                             <tr>
-
+                                <th scope="col" class="border-0">#</th>
                                 <th scope="col" class="border-0">Nome</th>
                                 <th scope="col" class="border-0">Email</th>
 
@@ -48,7 +48,7 @@
                         <tbody>
                             @foreach ($userData as $item)
                             <tr>
-
+                                <td>{{$loop->iteration}}</td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->email}}</td>
 

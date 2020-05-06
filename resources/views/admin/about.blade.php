@@ -36,8 +36,7 @@
                     <li class="list-group-item p-4 card-li-fix-height">
                         <h5 class="card-title">Valores</h5>
                         <p class="card-text d-inline-block mb-3">{{$data['values']->text}}</p>
-                        <p class="text-muted status-update">alteração realizada por
-                            colocar usuário no dia {{ Carbon\Carbon::parse($data['vision']->updated_at)->format('d-m-Y') }}
+                        <p class="text-muted status-update">alteração realizada no dia {{ Carbon\Carbon::parse($data['vision']->updated_at)->format('d-m-Y') }}
                     </li>
                 </ul>
             </div>

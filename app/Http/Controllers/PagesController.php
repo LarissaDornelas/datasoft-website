@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Content;
+use App\Download;
 use Exception;
 
-class FirstPageController extends Controller
+class PagesController extends Controller
 {
-    public function getContent()
+    public function getContentFirstPage()
     {
         try {
             $home = DB::table('content')->where('page', '=', 'inicio')->get();
@@ -33,7 +34,17 @@ class FirstPageController extends Controller
 
             return view('welcome', ['homeData' => $home, 'aboutData' => $aboutData, 'contactData' => $contact, 'servicesData' => $services]);
         } catch (Exception $e) {
-            dd($e);
+        }
+    }
+
+    public function getContentDownloads()
+    {
+        try {
+            $linksData = Download::all();
+            $downloads = DB::table('content')->where('page', '=', 'downloads')->get();
+
+            return view('downloads', ['linksData' => $linksData, 'downloadsData' => $downloads]);
+        } catch (Exception $e) {
         }
     }
 }

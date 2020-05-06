@@ -13,15 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'FirstPageController@getContent')->name('getFirstPageData');
+Route::get('/', 'PagesController@getContentFirstPage')->name('getFirstPageData');
 
 Route::get('/portfolio', function () {
     return view('portfolio');
 })->name('portfolio');
 
-Route::get('/downloads', function () {
-    return view('downloads');
-})->name('downloads');
+Route::get('/downloads', 'PagesController@getContentDownloads')->name('downloads');
 
 Route::get('/admin', function () {
     return view('admin/login');
@@ -42,10 +40,10 @@ Route::get('/admin/editar-perfil', 'UsersController@getProfile')->middleware('au
 Route::post('/admin/alterar-nome', 'UsersController@changeName')->middleware('auth')->name('changeName');
 Route::post('/admin/alterar-senha', 'UsersController@changePassword')->middleware('auth')->name('changePassword');
 Route::get('/admin/excluir-conta', 'UsersController@deleteAccount')->middleware('auth')->name('deleteAccount');
+Route::post('/admin/{page}/editar', 'ContentController@editContent')->middleware('auth')->name('editContent');
 Route::get('/admin/downloads', 'DownloadsController@getAll')->middleware('auth')->name('getDownloads');
 Route::post('/admin/downloads/excluir/{id}', 'DownloadsController@delete')->middleware('auth')->name('deleteDownload');
 Route::post('/admin/downloads/{id}', 'DownloadsController@update')->middleware('auth')->name('editDownload');
 Route::post('/admin/downloads', 'DownloadsController@create')->middleware('auth')->name('createDownload');
 
 Route::get('/admin/{page}', 'ContentController@getContent')->middleware('auth')->name('showContent');
-Route::post('/admin/{page}/editar', 'ContentController@editContent')->middleware('auth')->name('editContent');

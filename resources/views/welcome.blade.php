@@ -56,7 +56,7 @@
                         </div>
                         <div class="col-lg-2 d-none d-lg-block">
                             <div class="log_chat_area d-flex align-items-end">
-                                <a href="" onClick="location.href='/downloads'" data-scroll-nav=" 0" class="say_hi"><img src="img/svg_icon/download-icon.svg" alt="" style="margin-right: 10px" /> Downloads</a>
+                                <a href="{{route('downloads')}}" class="say_hi"><img src="img/svg_icon/download-icon.svg" alt="" style="margin-right: 10px" /> Downloads</a>
                             </div>
 
                         </div>

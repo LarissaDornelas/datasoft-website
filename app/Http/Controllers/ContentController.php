@@ -104,6 +104,13 @@ class ContentController extends Controller
 
                     $contentData = DB::table('content')->where('page', '=', $page)->get();
                     return view('admin.services', ['data' => $contentData]);
+
+                case 'downloads':
+
+                    $data = $request->except(['_token']);
+                    DB::table('content')->where('page', '=', 'downloads')->update($data);
+
+                    return redirect('/admin/downloads');
             }
         } catch (Exception $e) {
             dd($e);

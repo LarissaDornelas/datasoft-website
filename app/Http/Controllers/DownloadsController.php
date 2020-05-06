@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Download;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DownloadsController extends Controller
 {
@@ -23,8 +24,9 @@ class DownloadsController extends Controller
     {
         try {
             $downloads = Download::all();
+            $contentData = DB::table('content')->where('page', '=', 'downloads')->get();
 
-            return view('admin/downloads', ['downloadsData' => $downloads]);
+            return view('admin/downloads', ['downloadsData' => $downloads, 'data' => $contentData]);
         } catch (Exception $err) {
         }
     }

@@ -50,10 +50,10 @@
                             <div class="main-menu  d-none d-lg-block text-center">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="/#aboutUs">Quem somos</a></li>
-                                        <li><a href="/#services">Serviços</a></li>
-                                        <li><a href="{{route('portfolio')}}">Portfólio</a></li>
-                                        <li><a href="/#contact">Fale conosco</a></li>
+                                        <li><a href="" onClick="location.href='/#about'">Quem somos</a></li>
+                                        <li><a href="" onClick="location.href='/#services'">Serviços</a></li>
+                                        <li><a href="" onClick="location.href='/portfolio'">Portfólio</a></li>
+                                        <li><a href="" onClick="location.href='/#contact'">Fale conosco</a></li>
 
                                     </ul>
                                 </nav>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="col-lg-2 d-none d-lg-block">
                             <div class="log_chat_area d-flex align-items-end">
-                                <a href="{{route('downloads')}}" data-scroll-nav="0" class="say_hi"><img src="img/svg_icon/download-icon.svg" alt="" style="margin-right: 10px" /> Downloads</a>
+                                <a href="#" class="say_hi"><img src="img/svg_icon/download-icon.svg" alt="" style="margin-right: 10px" /> Downloads</a>
                             </div>
 
                         </div>
@@ -96,7 +96,7 @@
                 <div class="col-lg-6">
                     <div class="section_title text-center mb-90">
                         <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Downloads para clientes</h3>
-                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Todas as atualizações estão disponiveis</p>
+                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s"> {{$downloadsData[0]->text}}</p>
                     </div>
                 </div>
             </div>
@@ -104,42 +104,26 @@
 
             <div class="section-top-border">
                 <h3 class="mb-30">Links disponíveis para download</h3>
-                <div class="progress-table-wrap">
-                    <div class="progress-table">
-                        <div class="table-head">
-                            <div class="serial">#</div>
-                            <div class="country">Nome</div>
-                            <div class="visit">Descrição</div>
-                            <div class="percentage">Link para download</div>
-                        </div>
-                        <div class="table-row">
-                            <div class="serial">01</div>
-                            <div class="country">Atualização sig</div>
-                            <div class="visit">Ultima atualização do sig</div>
-                            <div class="percentage">
-                                <button class="btn btn-primary">Baixar</button>
-                            </div>
-                        </div>
-                        <div class="table-row">
-                            <div class="serial">01</div>
-                            <div class="country">Atualização sig</div>
-                            <div class="visit">Ultima atualização do sig</div>
-                            <div class="percentage">
-                                <button class="btn btn-primary">Baixar</button>
-                            </div>
-                        </div>
-                        <div class="table-row">
-                            <div class="serial">01</div>
-                            <div class="country">Atualização sig</div>
-                            <div class="visit">Ultima atualização do sig</div>
-                            <div class="percentage">
-                                <button class="btn btn-primary">Baixar</button>
-                            </div>
-                        </div>
-
-
+                <div class="progress-table">
+                    <div class="table-head">
+                        <div class="serial">#</div>
+                        <div class="country">Nome</div>
+                        <div class="visit">Descrição</div>
+                        <div class="percentage" style="text-align: center">Link para download</div>
                     </div>
+                    @foreach($linksData as $link)
+                    <div class="table-row">
+                        <div class="serial">{{$loop->iteration}}</div>
+                        <div class="country">{{$link->title}}</div>
+                        <div class="visit">{{$link->description}}</div>
+                        <div class="percentage" style="justify-content: center">
+                            <button class="btn btn-primary" onclick="window.open('{{$link->link}}')">Baixar</button>
+                        </div>
+                    </div>
+                    @endforeach
+
                 </div>
+
             </div>
 
 
