@@ -63,7 +63,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="add-new-post.html">
+                            <a class="nav-link {{Request::is('admin/portfolio/*') || Request::is('admin/portfolio') ? 'active': ''}}" href="{{route('getPortfolioData')}}">
                                 <i class="material-icons">menu_book</i>
                                 <span>Portfólio</span>
                             </a>
@@ -75,7 +75,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('getDownloads')}}">
+                            <a class="nav-link {{Request::is('admin/downloads/*') || Request::is('admin/downloads') ? 'active': ''}}" href="{{route('getDownloads')}}">
                                 <i class="material-icons">cloud_download</i>
                                 <span>Downloads</span>
                             </a>

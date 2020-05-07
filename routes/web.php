@@ -42,6 +42,7 @@ Route::post('/admin/alterar-senha', 'UsersController@changePassword')->middlewar
 Route::get('/admin/excluir-conta', 'UsersController@deleteAccount')->middleware('auth')->name('deleteAccount');
 Route::post('/admin/{page}/editar', 'ContentController@editContent')->middleware('auth')->name('editContent');
 Route::get('/admin/downloads', 'DownloadsController@getAll')->middleware('auth')->name('getDownloads');
+Route::get('/admin/portfolio', 'PortfolioController@getAll')->middleware('auth')->name('getPortfolioData');
 Route::post('/admin/downloads/excluir/{id}', 'DownloadsController@delete')->middleware('auth')->name('deleteDownload');
 Route::post('/admin/downloads/{id}', 'DownloadsController@update')->middleware('auth')->name('editDownload');
 Route::post('/admin/downloads', 'DownloadsController@create')->middleware('auth')->name('createDownload');

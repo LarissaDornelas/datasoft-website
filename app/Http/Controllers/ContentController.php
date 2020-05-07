@@ -111,6 +111,13 @@ class ContentController extends Controller
                     DB::table('content')->where('page', '=', 'downloads')->update($data);
 
                     return redirect('/admin/downloads');
+
+                case 'portfolio':
+
+                    $data = $request->except(['_token']);
+                    DB::table('content')->where('page', '=', 'portfolio')->update($data);
+
+                    return redirect('/admin/portfolio');
             }
         } catch (Exception $e) {
             dd($e);
