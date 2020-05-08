@@ -22,7 +22,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Texto principal</h5>
                     <p class="card-text d-inline-block mb-3">{{$data[0]->text}}</p>
-                    <p class="text-muted status-update">alteração realizada no dia {{ Carbon\Carbon::parse($data[0]->updated_at)->format('d-m-Y') }}</p>
+                    <p class="text-muted status-update">alteração realizada no
+                        dia {{ Carbon\Carbon::parse($data[0]->updated_at)->format('d-m-Y')
+                        }}</p>
                 </div>
             </div>
         </div>
@@ -39,7 +41,9 @@
                     <li class="list-group-item p-3">
                         <div class="row">
                             <div class="col">
-                                <form method="POST" action="{{ route('editContent', ['page' => 'portfolio']) }}">
+                                <form method="POST" action="{{
+                                    route('editContent', ['page'=> 'portfolio'])
+                                    }}">
                                     {{ csrf_field()}}
                                     <div class="form-row">
                                         <div class="form-group col-md-12">
@@ -84,7 +88,7 @@
         </button>
     </div>
     @endif
-    <div class="row ">
+    <div class="row">
         <div class="col">
             <div class="card card-small mb-4">
                 <div class="card-header border-bottom">
@@ -109,14 +113,19 @@
                             <tr>
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$data->title}}</td>
-                                <td>{{$data->text}}</td>
-                                <td><img src="{{asset('portfolioImages/' . $data->image_url)}}" alt="" border=3 height=100 width=100 /></td>
+                                <td style=" max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{$data->text}}</td>
+                                <td>
+
+                                    <img src="{{asset('portfolioImages/' .
+                                        $data->image_url)}}" alt="" style="height:80px; width:170px;" />
+
+                                </td>
                                 <td style="text-align: center">
                                     <span data-toggle="modal" data-target="#edit-portfolio">
-                                        <button class="btn btn-warning edit" data-toggle="tooltip" data-toggle="modal" data-placement="top" title="Editar" data-value="{{$data->id}}" data-title="{{$data->title}}" data-description="{{$data->description}}" data-link="{{$data->link}}"> <i class="material-icons">edit</i></button>
+                                        <button class="btn btn-warning editPortfolio" data-toggle="tooltip" data-toggle="modal" data-placement="top" title="Editar" data-value="{{$data->id}}" data-title="{{$data->title}}" data-description="{{$data->text}}"> <i class="material-icons">edit</i></button>
                                     </span>
                                     <span data-toggle="modal" data-target="#delete-portfolio">
-                                        <button class="btn btn-danger delete" data-toggle="tooltip" data-placement="top" title="Excluir" data-value="{{$data->id}}"> <i class="material-icons">delete</i></button>
+                                        <button class="btn btn-danger deletePortfolio" data-toggle="tooltip" data-placement="top" title="Excluir" data-value="{{$data->id}}"> <i class="material-icons">delete</i></button>
                                     </span>
 
                                 </td>
@@ -127,7 +136,8 @@
                         </tbody>
                     </table>
                     @else
-                    <h6 style="text-align: center; margin-top: 12px;">Ainda não há dados disponíveis</h6>
+                    <h6 style="text-align: center; margin-top: 12px;">Ainda não
+                        há dados disponíveis</h6>
                     @endif
                 </div>
             </div>
@@ -136,11 +146,11 @@
 
     <div class="modal fade darken-background" id="edit-portfolio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <form id="editForm" method="POST">
+            <form id="editPortfolioForm" method="POST" enctype="multipart/form-data">
                 {{ csrf_field()}}
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Editar link para portfolio</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Editar item para portfolio</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -148,18 +158,18 @@
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Título:</label>
-                            <input required type="text" class="form-control" maxlength="60" name="title" id="editTitle" placeholder="Exemplo: Sig Gerencial">
+                            <label for="recipient-name" class="col-form-label">Nome:</label>
+                            <input required type="text" class="form-control" maxlength="60" name="title" id="editPortfolioTitle" placeholder="Exemplo: Sig Gerencial">
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Descrição:</label>
-                            <text required type="text" class="form-control" maxlength="100" name="description" id="editDescription" placeholder="Exemplo: versão 1.2 disponível">
+                            <textarea required class="form-control" name="text" rows="5" id="editPortfolioDescription" placeholder="Descreva aqui sobre o produto/serviço."></textarea>
                         </div>
                         <div class="form-row">
                             <div class="col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Link:</label>
-                                    <input required type="text" class="form-control" name="link" id="editLink" placeholder="Exemplo: https://www.linkparaportfolio.com.br">
+                                    <label for="recipient-name" class="col-form-label">Imagem:</label>
+                                    <input type="file" class="form-control-file" name="image" accept="image/*" id="image">
                                 </div>
                             </div>
                         </div>
@@ -192,7 +202,7 @@
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Descrição:</label>
-                            <textarea class="form-control" name="text" rows="5" placeholder="Descreva aqui sobre o produto/serviço."></textarea>
+                            <textarea required class="form-control" name="text" rows="5" placeholder="Descreva aqui sobre o produto/serviço."></textarea>
                         </div>
                         <div class="form-row">
                             <div class="col-sm-12 col-md-12">
@@ -214,11 +224,11 @@
 
     <div class="modal fade darken-background" id="delete-portfolio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <form id="deleteForm" method="POST">
+            <form id="deletePortfolioForm" method="POST">
                 {{ csrf_field()}}
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModal">Excluir link</h5>
+                        <h5 class="modal-title" id="deleteModal">Excluir item</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -229,7 +239,6 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-primary">Confirmar</button>
-
                     </div>
                 </div>
             </form>

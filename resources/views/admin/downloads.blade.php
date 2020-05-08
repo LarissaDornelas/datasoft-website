@@ -218,7 +218,7 @@
                 {{ csrf_field()}}
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModal">Excluir link</h5>
+                        <h5 class="modal-title" id="deleteModal">Excluir item</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

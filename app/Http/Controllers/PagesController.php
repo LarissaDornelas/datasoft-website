@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Content;
 use App\Download;
+use App\Portfolio;
 use Exception;
 
 class PagesController extends Controller
@@ -44,6 +45,16 @@ class PagesController extends Controller
             $downloads = DB::table('content')->where('page', '=', 'downloads')->get();
 
             return view('downloads', ['linksData' => $linksData, 'downloadsData' => $downloads]);
+        } catch (Exception $e) {
+        }
+    }
+    public function getContentPortfolio()
+    {
+        try {
+            $itemsData = Portfolio::all();
+            $portfolio = DB::table('content')->where('page', '=', 'portfolio')->get();
+
+            return view('portfolio', ['itemsData' => $itemsData, 'portfolioData' => $portfolio]);
         } catch (Exception $e) {
         }
     }

@@ -212,6 +212,7 @@
     <script src="{{asset('js/admin-area.js')}}"></script>
     <script src="{{asset('js/app-blog-new-post.1.1.0.min.js')}}"></script>
     <script src="{{asset('js/edit-downloads.js')}}"></script>
+    <script src="{{asset('js/edit-portfolio.js')}}"></script>
 </body>
 
 </html>

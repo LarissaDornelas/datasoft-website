@@ -96,41 +96,29 @@
                 <div class="col-lg-6">
                     <div class="section_title text-center mb-90">
                         <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Nossos produtos</h3>
-                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Tour function information without cross action media value quickly maximize timely deliverables.</p>
+                        <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">{{$portfolioData[0]->text}}</p>
                     </div>
                 </div>
             </div>
             <div class="row">
 
                 <div class="whole-wrap">
-                    <div class="container box_1170">
+                    <div class="container box_1170 ">
+                        @foreach($itemsData as $item)
                         <div class="section-top-border">
-                            <h3 class="mb-30">Sig gerencial</h3>
+                            <h3 class=" mb-30">{{$item->title}}</h3>
                             <div class="row">
-                                <div class="col-md-3">
-                                    <img src="img/banner/banner.png" alt="" class="img-fluid">
+                                <div class="col-md-5">
+                                    <img src="portfolioImages/{{$item->image_url}}" alt="" class="img-fluid">
                                 </div>
-                                <div class="col-md-9 mt-sm-20">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, ipsum eu mattis viverra, sem magna imperdiet libero, eget pulvinar sapien sem at nulla. Aenean eget ex vitae dui viverra commodo. Sed fermentum quam nec sapien rutrum ornare. Phasellus consectetur purus purus, sit amet semper diam placerat eget.</p>
+                                <div class="col-md-6 mt-sm-20">
+                                    <p>{{$item->text}}</p>
                                 </div>
                             </div>
                         </div>
-
+                        @endforeach
                     </div>
-                    <div class="container box_1170">
-                        <div class="section-top-border">
-                            <h3 class="mb-30">Sig gerencial</h3>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img src="img/banner/banner.png" alt="" class="img-fluid">
-                                </div>
-                                <div class="col-md-9 mt-sm-20">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices, ipsum eu mattis viverra, sem magna imperdiet libero, eget pulvinar sapien sem at nulla. Aenean eget ex vitae dui viverra commodo. Sed fermentum quam nec sapien rutrum ornare. Phasellus consectetur purus purus, sit amet semper diam placerat eget.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
                 </div>
             </div>
         </div>

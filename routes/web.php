@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@getContentFirstPage')->name('getFirstPageData');
 
-Route::get('/portfolio', function () {
-    return view('portfolio');
-})->name('portfolio');
+Route::get('/portfolio', 'PagesController@getContentPortfolio')->name('portfolio');
 
 Route::get('/downloads', 'PagesController@getContentDownloads')->name('downloads');
 
@@ -46,6 +44,7 @@ Route::get('/admin/portfolio', 'PortfolioController@getAll')->middleware('auth')
 Route::post('/admin/downloads/excluir/{id}', 'DownloadsController@delete')->middleware('auth')->name('deleteDownload');
 Route::post('/admin/downloads/{id}', 'DownloadsController@update')->middleware('auth')->name('editDownload');
 Route::post('/admin/downloads', 'DownloadsController@create')->middleware('auth')->name('createDownload');
+Route::post('/admin/portfolio/excluir/{id}', 'PortfolioController@delete')->middleware('auth')->name('deletePortfolio');
+Route::post('/admin/portfolio/{id}', 'PortfolioController@update')->middleware('auth')->name('editPortfolio');
 Route::post('/admin/portfolio', 'PortfolioController@create')->middleware('auth')->name('createPortfolio');
-
 Route::get('/admin/{page}', 'ContentController@getContent')->middleware('auth')->name('showContent');
