@@ -46,5 +46,6 @@ Route::get('/admin/portfolio', 'PortfolioController@getAll')->middleware('auth')
 Route::post('/admin/downloads/excluir/{id}', 'DownloadsController@delete')->middleware('auth')->name('deleteDownload');
 Route::post('/admin/downloads/{id}', 'DownloadsController@update')->middleware('auth')->name('editDownload');
 Route::post('/admin/downloads', 'DownloadsController@create')->middleware('auth')->name('createDownload');
+Route::post('/admin/portfolio', 'PortfolioController@create')->middleware('auth')->name('createPortfolio');
 
 Route::get('/admin/{page}', 'ContentController@getContent')->middleware('auth')->name('showContent');
