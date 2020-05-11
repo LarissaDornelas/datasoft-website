@@ -64,7 +64,7 @@
 
     <div class="modal fade darken-background" id="new-user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <form method="POST" action="{{ route('createUser') }}">
+            <form method="POST" action="{{ route('createUser') }}" id="formValidation">
                 {{ csrf_field()}}
                 <div class="modal-content">
                     <div class="modal-header">
@@ -77,23 +77,23 @@
 
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Nome:</label>
-                            <input required type="text" class="form-control" name="name">
+                            <input required type="text" class="form-control form-control-sm" name="name">
                         </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Email:</label>
-                            <input required type="email" class="form-control" name="email">
+                            <input required type="email" class="form-control form-control-sm" name="email">
                         </div>
                         <div class="form-row">
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Senha:</label>
-                                    <input required type="password" class="form-control" name="password">
+                                    <input required type="password" class="form-control form-control-sm" name="password" id="password">
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Confirmar senha:</label>
-                                    <input required type="password" class="form-control" name="confirm-password">
+                                    <input required type="password" class="form-control form-control-sm" name="confirm-password" id="password_confirm">
                                 </div>
                             </div>
                         </div>

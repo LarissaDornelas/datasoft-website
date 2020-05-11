@@ -4436,6 +4436,16 @@ h6 {
     display: flex;
 }
 
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../../loader.svg) 50% 50% no-repeat #000;
+    opacity: 0.8;
+}
 /* line 391, ../../Arafath/CL/December/233. Startup/HTML/scss/_elements.scss */
 .progress-table .table-row .serial,
 .progress-table .table-row .country,

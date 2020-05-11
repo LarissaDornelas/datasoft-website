@@ -109,61 +109,10 @@
                             flex-md-nowrap p-0">
 
                         <ul class="navbar-nav border-left flex-row">
-                            <li class="nav-item border-right dropdown
-                                    notifications">
-                                <a class="nav-link nav-link-icon
-                                        text-center" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <div class="nav-link-icon__wrapper">
-                                        <i class="material-icons">mail</i>
-                                        <span class="badge badge-pill
-                                                badge-danger">2</span>
-                                    </div>
-                                </a>
-                                <div class="dropdown-menu
-                                        dropdown-menu-small" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">
-                                        <div class="notification__icon-wrapper">
-                                            <div class="notification__icon">
-                                                <i class="material-icons">&#xE6E1;</i>
-                                            </div>
-                                        </div>
-                                        <div class="notification__content">
-                                            <span class="notification__category">Analytics</span>
-                                            <p>Your website’s active users
-                                                count
-                                                increased by
-                                                <span class="text-success
-                                                        text-semibold">28%</span>
-                                                in the
-                                                last week. Great job!</p>
-                                        </div>
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <div class="notification__icon-wrapper">
-                                            <div class="notification__icon">
-                                                <i class="material-icons">&#xE8D1;</i>
-                                            </div>
-                                        </div>
-                                        <div class="notification__content">
-                                            <span class="notification__category">Sales</span>
-                                            <p>Last week your store’s sales
-                                                count
-                                                decreased by
-                                                <span class="text-danger
-                                                        text-semibold">5.52%</span>.
-                                                It
-                                                could have been worse!</p>
-                                        </div>
-                                    </a>
-                                    <a class="dropdown-item
-                                            notification__all
-                                            text-center" href="#"> View all
-                                        Notifications </a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
+
+                            <li class="nav-item dropdown" style="height: 100%; display: flex; align-items: center; margin-left: 80px">
                                 <a class="nav-link dropdown-toggle
-                                        text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="height: 100%; display: flex; align-items: center; margin-left: 80px">
+                                        text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <span class="d-none d-md-inline-block">{{Auth::User()->name}}</span>
                                 </a>
                                 <div class="dropdown-menu
@@ -197,14 +146,18 @@
             </main>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{asset('js/popper.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/jquery.validate.min.js')}}"></script>
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script> -->
     <script src="{{asset('js/extras.1.1.0.min.js')}}"></script>
     <script src="{{asset('js/shards-dashboards.1.1.0.min.js')}}"></script>
     <script src="{{asset('js/app-blog-overview.1.1.0.js')}}"></script>
@@ -213,6 +166,7 @@
     <script src="{{asset('js/app-blog-new-post.1.1.0.min.js')}}"></script>
     <script src="{{asset('js/edit-downloads.js')}}"></script>
     <script src="{{asset('js/edit-portfolio.js')}}"></script>
+    <script src="{{asset('js/user-form-validate.js')}}"></script>
 </body>
 
 </html>

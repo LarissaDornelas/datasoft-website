@@ -27,7 +27,7 @@ Route::post('login', 'Auth\LoginController@login')->name('postLogin');
 Route::get('/logout', function () {
     Session::flush();
     Auth::logout();
-    return redirect(\URL::previous());
+    return redirect('/admin');
 })->name('logout');
 
 
