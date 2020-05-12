@@ -17,15 +17,15 @@ class contactUs extends Mailable
      * @return void
      */
 
-    public $fromMessage;
+    public $userMail;
     public $subject;
     public $messageBody;
 
-    public function __construct($from, $subject, $messageBody)
+    public function __construct($userMail, $subject, $messageBody)
     {
 
 
-        $this->fromMessage = $from;
+        $this->userMail = $userMail;
         $this->subject = $subject;
         $this->messageBody = $messageBody;
     }
@@ -38,6 +38,6 @@ class contactUs extends Mailable
     public function build()
     {
 
-        return $this->from('noreply.teste@mail.com')->subject($this->subject)->view('emails.contactUs')->with(['messageBody' => $this->messageBody]);
+        return $this->subject($this->subject)->view('emails.contactUs')->with(['messageBody' => $this->messageBody, 'userMail' => $this->userMail]);
     }
 }
