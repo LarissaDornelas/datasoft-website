@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,8 @@ Route::get('/', 'PagesController@getContentFirstPage')->name('getFirstPageData')
 Route::get('/portfolio', 'PagesController@getContentPortfolio')->name('portfolio');
 
 Route::get('/downloads', 'PagesController@getContentDownloads')->name('downloads');
+
+Route::post('/fale-conosco', 'CustomersController@postMessage')->name('contactUs');
 
 Route::get('/admin', function () {
     return view('admin/login');

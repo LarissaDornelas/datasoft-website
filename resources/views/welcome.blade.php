@@ -165,27 +165,42 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
+                    @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    @endif
                     <div class="touch_form">
-                        <form action="#">
+                        <form method="POST" action="{{ route('contactUs') }}">
+                            {{ csrf_field()}}
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                                        <input type="text" placeholder="Seu nome">
+                                        <input required type="text" name="name" placeholder="Seu nome">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                                        <input type="email" placeholder="Email">
+                                        <input required type="email" name="email" placeholder="Email">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                                        <input required type="text" name="phone" placeholder="Telefone">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                                        <input type="email" placeholder="Assunto">
+                                        <input required type="text" name="subject" placeholder="Assunto">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
-                                        <textarea name="" id="" cols="30" placeholder="Message" rows="10"></textarea>
+                                        <textarea required name="message" id="" cols="30" placeholder="Message" rows="10"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
