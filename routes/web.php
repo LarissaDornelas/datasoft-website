@@ -23,6 +23,9 @@ Route::get('/downloads', 'PagesController@getContentDownloads')->name('downloads
 Route::post('/fale-conosco', 'CustomersController@postMessage')->name('contactUs');
 
 Route::get('/admin', function () {
+    if (Auth::user() != null) {
+        return redirect('/admin/inicio');
+    }
     return view('admin/login');
 })->name('login');
 
