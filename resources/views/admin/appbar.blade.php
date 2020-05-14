@@ -164,6 +164,7 @@
     <script src="{{asset('js/edit-downloads.js')}}"></script>
     <script src="{{asset('js/edit-portfolio.js')}}"></script>
     <script src="{{asset('js/user-form-validate.js')}}"></script>
+    <script src="{{asset('js/delete-customer.js')}}"></script>
 
     @yield('moreJs')
 </body>

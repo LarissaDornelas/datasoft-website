@@ -13,7 +13,17 @@ class CustomersController extends Controller
 
     public function getAll()
     {
-        return view('admin.customers');
+        try {
+            $customers = Customer::all();
+
+            if (sizeOf($customers) > 0) {
+                return view('admin/customers', ['customersData' => $customers]);
+            } else {
+                return view('admin/customers', ['customersData' => []]);
+            }
+        } catch (Exception $e) {
+            return view('admin/customers', ['customersData' => []]);
+        }
     }
 
     public function postMessage(Request $request)
@@ -34,6 +44,18 @@ class CustomersController extends Controller
             return redirect('/#contact')->with('success', 'Obrigado por nos contatar!');
         } catch (Exception $err) {
             return redirect('/#contact')->with('error', 'Ocorreu um erro ao enviar emaill. Por favor, tente novamente mais tarde.');
+        }
+    }
+
+    public function delete(Request $request, $id)
+    {
+        try {
+
+            Customer::where('id', $id)->first()->delete();
+
+            return redirect('/admin/clientes')->with('status', 'Cliente excluído com sucesso');
+        } catch (Exception $err) {
+            return redirect('/admin/clientes')->with('error', 'Ocorreu um erro ao excluir Cliente. Tente novamente mais tarde!');
         }
     }
 }
