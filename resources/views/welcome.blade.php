@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 
+
 </head>
 
 <body>
@@ -198,7 +199,7 @@
 
                                 <div class="col-md-6">
                                     <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                                        <input required type="text" name="phone" placeholder="Telefone">
+                                        <input id="phone" required type="text" name="phone" placeholder="Telefone">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -252,7 +253,7 @@
                     <div class="col-lg-3 col-md-12">
                         <div class="socail_links">
                             <ul>
-                                <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                <li><a class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" href="https://www.facebook.com/DataSoftAutomacao/" target="_blank"> <i class="fa fa-facebook"></i> </a></li>
 
                             </ul>
                         </div>
@@ -288,6 +289,8 @@
 
     <!-- JS here -->
     <script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <script src="{{asset('js/phone-mask.js')}}"></script>
     <script src="{{asset('js/vendor/modernizr-3.5.0.min.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
@@ -306,7 +309,6 @@
     <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{asset('js/plugins.js')}}"></script>
     <script src="{{asset('js/gijgo.min.js')}}"></script>
-
     <!--contact js-->
     <script src="{{asset('js/contact.js')}}"></script>
     <!-- <script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script> -->

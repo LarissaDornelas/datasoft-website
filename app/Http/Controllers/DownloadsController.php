@@ -33,7 +33,9 @@ class DownloadsController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request['updated_at'] = date('Y-m-d H:i:s');
         $downloadsData = $request->except('_token');
+
         try {
             Download::where('id', $id)->first()->update($downloadsData);
 

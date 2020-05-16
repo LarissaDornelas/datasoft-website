@@ -64,7 +64,7 @@
 
     <div class="modal fade darken-background" id="new-user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <form method="POST" action="{{ route('createUser') }}" id="formValidation">
+            <form method="POST" action="{{ route('createUser') }}">
                 {{ csrf_field()}}
                 <div class="modal-content">
                     <div class="modal-header">

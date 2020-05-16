@@ -49,7 +49,9 @@ class PortfolioController extends Controller
 
     public function update(Request $request, $id)
     {
-        $downloadsData = $request->except(['image', '_token']);
+        $request['updated_at'] = date('Y-m-d H:i:s');
+
+        $portfolioData = $request->except(['image', '_token']);
         try {
             if ($request->image) {
                 $imageNow = Portfolio::select('image_url')->where('id', $id)->get();
@@ -65,10 +67,10 @@ class PortfolioController extends Controller
 
                 $request->image->move(public_path('portfolioImages'), $imageName);
 
-                $downloadsData['image_url'] = $imageName;
+                $portfolioData['image_url'] = $imageName;
             }
 
-            Portfolio::where('id', $id)->first()->update($downloadsData);
+            Portfolio::where('id', $id)->first()->update($portfolioData);
 
             return redirect('/admin/portfolio')->with('status', 'Item atualizado com sucesso');
         } catch (Exception $err) {

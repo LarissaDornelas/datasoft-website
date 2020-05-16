@@ -23,7 +23,7 @@
                     <h5 class="card-title">Texto principal</h5>
                     <p class="card-text d-inline-block mb-3">{{$data[0]->text}}</p>
                     <p class="text-muted status-update">alteração realizada no
-                        dia {{ Carbon\Carbon::parse($data[0]->updated_at)->format('d-m-Y')
+                        dia {{ Carbon\Carbon::parse($data[0]->updated_at)->format('d/m/Y')
                         }}</p>
                 </div>
             </div>

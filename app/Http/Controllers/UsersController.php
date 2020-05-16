@@ -29,6 +29,7 @@ class UsersController extends Controller
     function createUser(Request $request)
     {
         try {
+            if ($request['password'] !== $request['confirm-password']) return redirect('/admin/usuarios')->with('error', 'Informações inválidas. O campo "confirmar senha" deve estar idêntico ao campo "senha".');
             $newUser = $request->except('_token', 'confirm-password');
             $hashedRandomPassword = Hash::make($request['password']);
 
@@ -57,13 +58,14 @@ class UsersController extends Controller
     function changePassword(Request $request)
     {
         try {
+
             $user = User::where('email', Auth::User()->email)
                 ->first();
 
             if ($user != null && Hash::check($request['passwordNow'], $user->password)) {
                 $hashedRandomPassword = Hash::make($request['password']);
 
-                User::where('email', Auth::User()->email)->first()->update(array('password' => $hashedRandomPassword));
+                User::where('email', Auth::User()->email)->first()->update(array('password' => $hashedRandomPassword, 'updated_at' => date('Y-m-d H:i:s')));
 
 
                 return redirect('/admin/editar-perfil')->with('successPassword', 'Senha atualizada com sucesso');
@@ -78,7 +80,8 @@ class UsersController extends Controller
     {
         try {
 
-            User::where('email', Auth::User()->email)->first()->update(array('name' => $request['name']));
+
+            User::where('email', Auth::User()->email)->first()->update(array('name' => $request['name'], 'updated_at' => date('Y-m-d H:i:s')));
 
             return redirect('/admin/editar-perfil')->with('successName', 'Nome atualizado com sucesso');
         } catch (Exception $err) {
