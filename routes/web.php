@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', 'PagesController@getContentFirstPage')->name('getFirstPageData');
 
 Route::get('/portfolio', 'PagesController@getContentPortfolio')->name('portfolio');

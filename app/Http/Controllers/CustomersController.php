@@ -39,7 +39,7 @@ class CustomersController extends Controller
             if ($customer === null) {
                 Customer::create($request->all());
             }
-            Mail::to('larissa.dornelas@familiapires.com.br')->send(new contactUs($userMail, $subject, $message));
+            Mail::to('sac@datasoftautomacao.com.br')->send(new contactUs($userMail, $subject, $message));
 
             return redirect('/#contact')->with('success', 'Obrigado por nos contatar!');
         } catch (Exception $err) {
