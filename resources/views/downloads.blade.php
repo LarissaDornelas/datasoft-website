@@ -168,8 +168,8 @@
 
                     <div class="col-xl-12" style="margin:30px 0 -60px 0">
                         <div class="Description">
-                            <p>Rua Gomes Batista, 11 - sala 304 - Nossa Sra. da Conceicao - João Monlevade - MG 35930-033.<br />
-                                Fones: (31) 3851-1585 - (31) 3850-1956</p>
+                        <p>Av Getulio Vargas, 4.726 Bairro Carneirinhos - João Monlevade - MG<br />
+                                Fones: (31)3851-1585 - (31)3852-3009 - (31)9 8978-4857</p>
                         </div>
                     </div>
                 </div>
